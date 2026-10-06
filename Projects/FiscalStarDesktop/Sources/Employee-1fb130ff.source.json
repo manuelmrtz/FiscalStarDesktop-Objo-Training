@@ -1,0 +1,16 @@
+{
+  "Version": 6,
+  "Name": "Employee",
+  "Id": "1fb130ff-1fdf-44ac-bbc0-0463d31a9e39",
+  "Kind": "Class",
+  "BuildScope": "Application",
+  "Namespace": "",
+  "Folder": "",
+  "ParentModule": "",
+  "ParentModuleId": "",
+  "AvailableInDesigner": false,
+  "CodeFile": "Employee-1fb130ff.objobasic",
+  "LayoutFile": "",
+  "Notes": [],
+  "InspectorBehaviour": []
+}

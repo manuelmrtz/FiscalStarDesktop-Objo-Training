@@ -1,0 +1,18 @@
+{
+  "Version": 6,
+  "Id": "31fccf33-728f-4c50-bcfc-011b4453923f",
+  "Name": "FiscalStarDesktop",
+  "LastSavedStudioVersion": "26.10.1",
+  "ActiveProject": "FiscalStarDesktop",
+  "ApplicationProjectId": "f2bc98a6-65c9-4f53-bddf-b1f98b30350d",
+  "Projects": [
+    {
+      "Id": "f2bc98a6-65c9-4f53-bddf-b1f98b30350d",
+      "Path": "Projects/FiscalStarDesktop",
+      "Name": "FiscalStarDesktop",
+      "Type": "Desktop"
+    }
+  ],
+  "EmptyFolders": [],
+  "AiCustomInstructions": ""
+}

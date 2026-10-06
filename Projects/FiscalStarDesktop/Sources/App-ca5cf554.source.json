@@ -1,0 +1,16 @@
+{
+  "Version": 6,
+  "Name": "App",
+  "Id": "ca5cf554-483d-4ac1-9380-aa6488b3cded",
+  "Kind": "Class",
+  "BuildScope": "Application",
+  "Namespace": "",
+  "Folder": "",
+  "ParentModule": "",
+  "ParentModuleId": "",
+  "AvailableInDesigner": false,
+  "CodeFile": "App-ca5cf554.objobasic",
+  "LayoutFile": "",
+  "Notes": [],
+  "InspectorBehaviour": []
+}

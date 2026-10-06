@@ -1,0 +1,16 @@
+{
+  "Version": 6,
+  "Name": "Window1",
+  "Id": "f85d860d-9f32-44c4-91cd-69204bfcad97",
+  "Kind": "Window",
+  "BuildScope": "Application",
+  "Namespace": "",
+  "Folder": "",
+  "ParentModule": "",
+  "ParentModuleId": "",
+  "AvailableInDesigner": false,
+  "CodeFile": "Window1-f85d860d.objobasic",
+  "LayoutFile": "Window1-f85d860d.layout.xml",
+  "Notes": [],
+  "InspectorBehaviour": []
+}

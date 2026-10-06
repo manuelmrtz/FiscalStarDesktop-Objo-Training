@@ -1,0 +1,63 @@
+Class Window1 Inherits Window
+
+    Sub btnCreate_Pressed()
+    Var employeeIDInput As String = txtEmployeeID.Text
+    Var employeeName As String = txtEmployeeName.Text
+    Var hoursWorkedInput As String = txtHoursWorked.Text
+    Var hourlyRateInput As String = txtHourlyRate.Text
+
+    Var employeeID As Integer = 0
+    Var hoursWorked As Decimal = 0d
+    Var hourlyRate As Decimal = 0d
+
+    Var validInput As Boolean = True
+
+    lblStatus.Text = ""
+
+    If Integer.TryParse(employeeIDInput, employeeID) = False Then
+      lblStatus.Text = "Employee ID must be an integer."
+      validInput = False
+    ElseIf employeeID <= 0 Then
+      lblStatus.Text = "Employee ID must be greater than zero."
+      validInput = False
+    End If
+
+    If employeeName.Trim() = "" Then
+      lblStatus.Text = "Employee Name cannot be blank."
+      validInput = False
+
+    End If
+
+    If Decimal.TryParse(hoursWorkedInput, hoursWorked) = False Then
+      lblStatus.Text = "Hours Worked must be numeric."
+      validInput = False
+    ElseIf hoursWorked < 0d Then
+      lblStatus.Text = "Hours Worked cannot be negative."
+      validInput = False
+    End If
+
+    If Decimal.TryParse(hourlyRateInput, hourlyRate) = False Then
+      lblStatus.Text = "Hourly Rate must be numeric."
+      validInput = False
+    ElseIf hourlyRate <= 0d Then
+      lblStatus.Text = "Hourly Rate must be greater than zero."
+      validInput = False
+    End If
+
+    If validInput Then
+      Var employee As New Employee(employeeID, employeeName, hoursWorked, hourlyRate)
+      lblStatus.Text = "Employee created: " + employee.Name
+    End If
+    End Sub
+    Sub btnClear_Pressed()
+    txtEmployeeID.Text = ""
+    txtEmployeeName.Text = ""
+    txtHoursWorked.Text = ""
+    txtHourlyRate.Text = ""
+
+    lblStatus.Text = "Ready"
+    End Sub
+    Event Opening()
+    lblStatus.Text = "Ready"
+    End Event
+End Class

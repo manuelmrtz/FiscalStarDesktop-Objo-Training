@@ -1,0 +1,15 @@
+Public Class Employee
+
+    Public Property EmployeeID As Integer
+    Public Property Name As String
+    Public Property HoursWorked As Decimal
+    Public Property HourlyRate As Decimal
+    Public Property Active As Boolean
+    Public Constructor(employeeID As Integer, employeeName As String, hoursWorked As Decimal, hourlyRate As Decimal)
+    Self.EmployeeID = employeeID
+    Self.Name = employeeName
+    Self.HoursWorked = hoursWorked
+    Self.HourlyRate = hourlyRate
+    Self.Active = True
+    End Constructor
+End Class
