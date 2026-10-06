@@ -14,7 +14,7 @@
     ],
     "IncludeODBCSupport": false,
     "WorkerProjectIds": [],
-    "DefaultWindow": "Window1",
+    "DefaultWindow": "winEmployee",
     "DefaultWebPage": "",
     "WebRequestHandler": ""
   },

@@ -3,4 +3,5 @@ Build/
 Publish/
 bin/
 obj/
+*.pdf
 .DS_Store

@@ -1,4 +1,4 @@
-Class Window1 Inherits Window
+Public Class winEmployee Inherits Window
 
     Sub btnCreate_Pressed()
     Var employeeIDInput As String = txtEmployeeID.Text
