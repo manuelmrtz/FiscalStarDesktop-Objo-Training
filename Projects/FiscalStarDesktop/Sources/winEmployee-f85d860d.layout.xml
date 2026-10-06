@@ -8,6 +8,6 @@
   <TextField name="txtHoursWorked" x="148" y="100" width="320" height="32" text="" />
   <TextField name="txtHourlyRate" x="148" y="140" width="120" height="32" text="" />
   <Button name="btnCreate" x="128" y="200" width="128" height="30" text="Create Employee" />
-  <Button name="btnClear" x="280" y="200" width="128" height="30" text="Clear" />
+  <Button name="btnClear" x="281" y="200" width="128" height="30" text="Clear" />
   <Label name="lblStatus" x="20" y="256" width="512" height="32" text="lblStatus" />
 </Window>
