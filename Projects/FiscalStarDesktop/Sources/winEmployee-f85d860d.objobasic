@@ -1,63 +1,106 @@
 Public Class winEmployee Inherits Window
 
     Sub btnCreate_Pressed()
-    Var employeeIDInput As String = txtEmployeeID.Text
-    Var employeeName As String = txtEmployeeName.Text
-    Var hoursWorkedInput As String = txtHoursWorked.Text
-    Var hourlyRateInput As String = txtHourlyRate.Text
+    lblStatus.Text = ""
 
     Var employeeID As Integer = 0
+    Var employeeName As String = ""
     Var hoursWorked As Decimal = 0d
     Var hourlyRate As Decimal = 0d
 
-    Var validInput As Boolean = True
+    If ValidateEmployeeID(employeeID) = False Then Return
+    If ValidateEmployeeName(employeeName) = False Then Return
+    If ValidateHoursWorked(hoursWorked) = False Then Return
+    If ValidateHourlyRate(hourlyRate) = False Then Return
 
-    lblStatus.Text = ""
+    Var employee As New Employee(employeeID, employeeName, hoursWorked, hourlyRate)
 
-    If Integer.TryParse(employeeIDInput, employeeID) = False Then
-      lblStatus.Text = "Employee ID must be an integer."
-      validInput = False
-    ElseIf employeeID <= 0 Then
-      lblStatus.Text = "Employee ID must be greater than zero."
-      validInput = False
-    End If
+    lblStatus.Text = "Employee created: " + employee.Name
 
-    If employeeName.Trim() = "" Then
-      lblStatus.Text = "Employee Name cannot be blank."
-      validInput = False
-
-    End If
-
-    If Decimal.TryParse(hoursWorkedInput, hoursWorked) = False Then
-      lblStatus.Text = "Hours Worked must be numeric."
-      validInput = False
-    ElseIf hoursWorked < 0d Then
-      lblStatus.Text = "Hours Worked cannot be negative."
-      validInput = False
-    End If
-
-    If Decimal.TryParse(hourlyRateInput, hourlyRate) = False Then
-      lblStatus.Text = "Hourly Rate must be numeric."
-      validInput = False
-    ElseIf hourlyRate <= 0d Then
-      lblStatus.Text = "Hourly Rate must be greater than zero."
-      validInput = False
-    End If
-
-    If validInput Then
-      Var employee As New Employee(employeeID, employeeName, hoursWorked, hourlyRate)
-      lblStatus.Text = "Employee created: " + employee.Name
-    End If
     End Sub
     Sub btnClear_Pressed()
+    ClearForm()
+
+    End Sub
+    Event Opening()
+    ClearForm()
+
+    End Event
+    Private Function ValidateEmployeeID(ByRef employeeID As Integer) As Boolean
+    Var input As String = txtEmployeeID.Text.Trim()
+
+    If Integer.TryParse(input, employeeID) = False Then
+      lblStatus.Text = "Employee ID must be an integer."
+      txtEmployeeID.SetFocus()
+      Return False
+    End If
+
+    If employeeID <= 0 Then
+      lblStatus.Text = "Employee ID must be greater than zero."
+      txtEmployeeID.SetFocus()
+      Return False
+    End If
+
+    Return True
+
+    End Function
+    Private Function ValidateEmployeeName(ByRef employeeName As String) As Boolean
+    employeeName = txtEmployeeName.Text.Trim()
+
+    If employeeName = "" Then
+      lblStatus.Text = "Employee Name cannot be blank."
+      txtEmployeeName.SetFocus()
+      Return False
+    End If
+
+    Return True
+
+    End Function
+    Private Function ValidateHoursWorked(ByRef hoursWorked As Decimal) As Boolean
+    Var input As String = txtHoursWorked.Text.Trim()
+
+    If Decimal.TryParse(input, hoursWorked) = False Then
+      lblStatus.Text = "Hours Worked must be numeric."
+      txtHoursWorked.SetFocus()
+      Return False
+    End If
+
+    If hoursWorked < 0d Then
+      lblStatus.Text = "Hours Worked cannot be negative."
+      txtHoursWorked.SetFocus()
+      Return False
+    End If
+
+    Return True
+
+    End Function
+    Private Function ValidateHourlyRate(ByRef hourlyRate As Decimal) As Boolean
+    Var input As String = txtHourlyRate.Text.Trim()
+
+    If Decimal.TryParse(input, hourlyRate) = False Then
+      lblStatus.Text = "Hourly Rate must be numeric."
+      txtHourlyRate.SetFocus()
+      Return False
+    End If
+
+    If hourlyRate <= 0d Then
+      lblStatus.Text = "Hourly Rate must be greater than zero."
+      txtHourlyRate.SetFocus()
+      Return False
+    End If
+
+    Return True
+
+    End Function
+    Private Sub ClearForm()
     txtEmployeeID.Text = ""
     txtEmployeeName.Text = ""
     txtHoursWorked.Text = ""
     txtHourlyRate.Text = ""
 
     lblStatus.Text = "Ready"
+
+    txtEmployeeID.SetFocus()
+
     End Sub
-    Event Opening()
-    lblStatus.Text = "Ready"
-    End Event
 End Class
